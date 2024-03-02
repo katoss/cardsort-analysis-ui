@@ -8,7 +8,8 @@ st.set_option('deprecation.showPyplotGlobalUse', False)
 st.set_page_config(page_title="Card Sorting Analysis")
 
 st.header('Analyse your card sorting data', divider='rainbow')
-st.write("*This app provides a UI for the main functions of the [cardsort](https://cardsort.readthedocs.io/en/latest/) Python package.*")
+st.write("*This app provides a UI for the main functions of the [cardsort](https://cardsort.readthedocs.io/en/latest/) Python package. Feel free to contribute to improving this app by leaving feedback or contributing code on GitHub ([app](https://github.com/katoss/cardsort-analysis-ui) | [Python package](https://github.com/katoss/cardsort))* :sparkles:")
+
 st.write("Card sorting is a user research method that can help you create user-friendly information architectures for websites. See [here](https://www.nngroup.com/articles/card-sorting-definition/) for an introduction to card sorting.")
 
 st.header('Upload your dataset')
@@ -65,4 +66,3 @@ if file:
         list = card_selection
         st.write(cs.get_cluster_labels(df,list))
         st.write("**What do the columns mean?** *user_id:* ID of each participant who grouped your card selection together; *cluster_label:* The label this participant gave to the cluster that contains the cards you selected; *cards:* All cards that the user grouped together under this label.")
-
