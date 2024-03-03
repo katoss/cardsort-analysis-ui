@@ -58,7 +58,16 @@ if file:
         step = step,
         help="The threshold is the distance limit to which you want to consider (and thus color) clusters. You can determine this limit yourself, based on which clusters make sense to you. The closer to the left the branches merge, the more people grouped the respective cards together."
     )
-    if st.button("Create dendrogram", type="primary"):
+
+    if 'dendrogram_created' not in st.session_state:
+        st.session_state.dendrogram_created = False
+
+    def create_dendrogram():
+        st.session_state.dendrogram_created = True
+
+    st.button('Create dendrogram', on_click=create_dendrogram, type="primary")
+
+    if st.session_state.dendrogram_created:
         dm = cs.get_distance_matrix(df)
         fig = cs.create_dendrogram(df,dm, count=count_option, linkage=linkage_option, color_threshold=threshold_option)
         st.pyplot(fig)
