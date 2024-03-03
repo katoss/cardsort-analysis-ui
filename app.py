@@ -14,6 +14,12 @@ st.write("Card sorting is a user research method that can help you create user-f
 
 st.header('Upload your dataset')
 file = st.file_uploader(label = "**Accepted input:** .csv files in 'Casolysis Data' format. As generated, for example, by [kardSort](https://kardsort.com/).", help="Columns: 'card_id', 'card_label', 'category_id', 'category_label', 'user_id'")
+st.download_button(
+    label="Get a test dataset",
+    data=pd.read_csv('test-data.csv').to_csv().encode('utf-8'),
+    file_name='test-data.csv',
+    mime='text/csv'
+)
 
 if file:
     df = pd.read_csv(file)
