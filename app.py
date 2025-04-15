@@ -3,8 +3,6 @@ import pandas as pd
 import cardsort as cs
 import matplotlib.pyplot as plt
 
-st.set_option('deprecation.showPyplotGlobalUse', False)
-
 st.set_page_config(page_title="Card Sorting Analysis")
 
 st.header('Analyse your card sorting data', divider='rainbow')
